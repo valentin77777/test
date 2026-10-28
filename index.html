@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тестовая страница</title>
+  <style>
+    :root { --bg: #f6f4ef; --fg: #1d1d1f; --accent: #2f6f4f; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #16181a; --fg: #ececec; --accent: #7fc3a0; } }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+           background: var(--bg); color: var(--fg);
+           font: 18px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 560px; padding: 32px 16px; text-align: center; }
+    h1 { margin: 0 0 12px; font-size: 2rem; }
+    p { margin: 0 0 20px; opacity: .8; }
+    button { font: inherit; padding: 10px 20px; border: 0; border-radius: 8px;
+             background: var(--accent); color: var(--bg); cursor: pointer; }
+    #count { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Привет из GitHub!</h1>
+    <p>Эту страницу создал Claude и сам записал её в репозиторий. Связка Claude ↔ GitHub работает.</p>
+    <button id="btn">Нажми меня</button>
+    <p>Нажатий: <span id="count">0</span></p>
+  </main>
+  <script>
+    let n = 0;
+    document.getElementById('btn').addEventListener('click', () => {
+      document.getElementById('count').textContent = ++n;
+    });
+  </script>
+</body>
+</html>
